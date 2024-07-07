@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Bar Count</title>
+</head>
+<body>
+    <p>Type something and press Space:</p>
+    <input type="text" id="textInput">
+    <br><br>
+    <button onclick="showCount()">Submit</button>
+    <p id="countMessage"></p>
+
+    <script>
+        let spaceCount = 0; // Initialize space bar count
+
+        document.getElementById("textInput").addEventListener("keydown", function(event) {
+            if (event.key === " ") { // Check if space bar is pressed
+                spaceCount++; // Increment space bar count
+            }
+        });
+
+        function showCount() {
+            document.getElementById("countMessage").textContent = `Space bar pressed ${spaceCount} time${spaceCount !== 1 ? 's' : ''}.`;
+            spaceCount = 0; // Reset space bar count after displaying
+        }
+    </script>
+</body>
+</html>

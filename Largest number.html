@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Largest Number</title>
+</head>
+<body>
+    <label for="a">Enter number 1:</label>
+    <input type="number" id="a"><br><br>
+    <label for="b">Enter number 2:</label>
+    <input type="number" id="b"><br><br>
+    <input type="button" value="Find Max" onclick="findMax()"><br><br>
+    <p id="result"></p>
+</body>
+<script>
+    function findMax(){
+        var a = (document.getElementById("a").value);
+        var b = (document.getElementById("b").value);
+        var result = "";
+
+        if (a > b) {
+            result = "The largest number is " + a;
+        } else if (b > a) {
+            result = "The largest number is " + b;
+        } else {
+            result = "Both numbers are equal.";
+        }
+
+        document.getElementById("result").innerText = result;
+    }
+</script>
+</html>

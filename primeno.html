@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers</title>
+</head>
+<body>
+    <p>Press the button to see prime numbers between 1 and 100:</p>
+    <input type="button" value="Show Primes" onclick="showPrimes()">
+    <div id="result"></div>
+    
+    <script>
+        function isPrime(n) {
+            if (n <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= n / 2; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function showPrimes() {
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = ''; // Clear previous results
+            const N = 100; // Define the range
+
+            for (let i = 1; i <= N; i++) {
+                if (isPrime(i)) {
+                    resultElement.innerHTML += i + ' ';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
