@@ -202,6 +202,128 @@ if (i !== -1) {
 }
 
 
+// Spread Vs Rest operator Arrays
+
+// Spread operator 
+//The spread operator (...) is used to expand elements of an iterable (like an array) 
+//or properties of an object into individual elements.
+
+// Merging Arrays
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const mergedArray = [...arr1, ...arr2];
+console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+// Copying array
+const copiedArray = [...arr1];
+console.log(copiedArray); // Output: [1, 2, 3]
+
+//Spread in Function Calls
+//The spread operator can be used to pass elements of an array as arguments to a function.
+const ex = [1, 2, 3, 5, 6];
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+console.log(sum(...ex)); // Output: 6 
+// If the array has more than three elements, only the first three elements will be 
+//passed to the function, and the remaining elements will be ignored.
+
+// Rest operator
+//The rest operator (...) is used to collect elements of an iterable (like an array)
+//into a single array element. It is used in function parameters to represent a variable number of arguments
+//The rest operator is similar to the spread operator, but it is used in a different context.
+//The spread operator is used to expand elements of an iterable into individual elements, while the rest operator
+//is used to collect elements of an iterable into a single array element.
+
+
+// Rest in Function Parameters
+//The rest operator can be used to collect all remaining arguments of a function into an array.
+function sum(...numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);  // Accumulator  intial 
+} // reduce iterates over each element in the array, accumulating the sum
+
+console.log(sum(1, 2, 3)); // Output: 6
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15  
+
+// Accumulator  intial 
+// reduce iterates over each element in the array, accumulating the sum
+//The reduce method takes a callback function and an initial value (0 in this case)
+//The callback function (acc, num) => acc + num adds each element (num) to the accumulator (acc), starting from 0.
+
+
+
+// Array Operations: Insertion, Deletion, Updation, Slice, Splice
+let arr = [1, 2, 3];
+
+// Insertion
+// Inserttion using Push ()
+
+arr.push(4);
+console.log(arr); // Output: [1, 2, 3, 4]
+
+// Insertion using Splice ()
+arr.splice(2, 0, 3); // (index, deleteCount, item1, item2, ...)
+console.log(arr); // Output: [1, 2, 3, 4]
+
+// Deletion 
+// Deletion using Pop ()
+
+arr.pop();
+console.log(arr);
+// Output: [1, 2, 3]
+arr.splice(1, 1); // // Remove 1 elements starting from index 1
+console.log(arr); 
+// Output: [1, 3]
+arr.splice(2); // Remove all elements starting from index 2
+console.log(arr); 
+// Output: [1]
+
+//Updation   
+arr[1] = 5;
+console.log(arr); 
+// Output: [1, 5]
+// In JavaScript, when you assign a value to an index in an array that does not
+//  currently exist, JavaScript will dynamically expand the array to accommodate the new index.
+
+
+// filter
+// filter() creates a new array with all elements that pass the test implemented by the provided function.
+// The filter() method does not execute the function for array elements without values.
+// The filter() method does not change the original array.
+let num = [1, 2, 3, 4, 5];
+
+let evenNumbers = num.filter(function(num) {
+    return num % 2 === 0;
+});
+
+console.log(evenNumbers); // Output: [2, 4]
+ 
+// for each 
+// The forEach() method calls a function once for each array element.
+// The forEach() method does not have an index parameter.
+// The forEach() method does not have a return value.
+// The forEach() method does not change the original array.
+
+num.forEach(function(num) {
+  console.log(num); // Output: 1, 2, 3, 4,
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
